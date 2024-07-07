@@ -33,11 +33,10 @@ def predict():
         loss, acc = model.evaluate(X_test, y_test, verbose=2)
         print("####################Restored model, accuracy: {:5.2f}%".format(100 * acc))
 
-        res = jsonify({
+        return jsonify({
             "headers": HEADERS,
             "data": str({ "prediction": prediction })
         })
-        return res
 
 
 if __name__ == '__main__':
